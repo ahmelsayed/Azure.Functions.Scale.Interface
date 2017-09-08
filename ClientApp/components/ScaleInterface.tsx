@@ -52,7 +52,7 @@ class ScaleInterface extends React.Component<WorkerInfoProps, {}> {
     }
 
     private isManager(row: number | undefined) {
-        return !!row && !!this.props.workersInfo[row] && this.props.workersInfo[row].isManager === 'true';
+        return typeof row !== 'undefined' && !!this.props.workersInfo[row] && this.props.workersInfo[row].isManager.toLowerCase() === 'true';
     }
 
     public render() {
